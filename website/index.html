@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOODX — Never Eat Alone Again 🍃 | Food Delivery for Ibadan</title>
+
+  <!-- Primary Meta -->
+  <meta name="description" content="FOODX — Food delivery built for how Gen Z eats. See what your friends are ordering, join in, and never eat alone again. Launching in Ibadan first.">
+  <meta name="keywords" content="food delivery Ibadan, Nigerian food app, FOODX, social food delivery, order food Ibadan, food with friends">
+  <meta name="author" content="FOODX">
+  <meta name="theme-color" content="#22c55e">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://foodx.ng">
+
+  <!-- Open Graph (WhatsApp, Facebook previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://foodx.ng">
+  <meta property="og:title" content="FOODX — Never Eat Alone Again 🍃">
+  <meta property="og:description" content="See what your friends are ordering. Join in. Share the moment. Food delivery built for Ibadan — powered by Paystack, built for the culture.">
+  <meta property="og:image" content="https://foodx.ng/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="FOODX">
+  <meta property="og:locale" content="en_NG">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://foodx.ng">
+  <meta name="twitter:title" content="FOODX — Never Eat Alone Again 🍃">
+  <meta name="twitter:description" content="Food delivery built for how Gen Z eats in Ibadan. Social. Fast. Nigerian-first.">
+  <meta name="twitter:image" content="https://foodx.ng/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- SVG Favicon Fallback -->
+  <script>
+    const svgFavicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+      <rect width="32" height="32" rx="8" fill="#0a1a0f"/>
+      <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
+            font-family="sans-serif" font-size="18" font-weight="800" fill="#22c55e">F</text>
+    </svg>`;
+    const blob = new Blob([svgFavicon], {type: 'image/svg+xml'});
+    const url = URL.createObjectURL(blob);
+    const link = document.querySelector("link[rel~='icon']") || document.createElement('link');
+    link.rel = 'icon';
+    link.href = url;
+    document.head.appendChild(link);
+  </script>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="custom-logo">
+          <span class="logo-letter text-white">FO</span>
+          <span class="logo-pill"></span>
+          <span class="logo-letter text-white">D</span>
+          <span class="logo-letter text-green">X</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how-it-works" class="nav-link">How it Works</a>
+        <a href="#community" class="nav-link">Community</a>
+        <a href="#waitlist" class="nav-btn">Join Waitlist</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light mode">
+          <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero" class="hero">
+    <div class="hero-bg-effects">
+      <div class="hero-glow hero-glow--1"></div>
+      <div class="hero-glow hero-glow--2"></div>
+      <div class="floating-shapes" id="floatingShapes"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge animate-on-scroll">
+          <span class="badge-dot"></span>
+          Launching in Ibadan first
+        </div>
+        <h1 class="hero-title animate-on-scroll">
+          Never eat alone<br>
+          <span class="hero-title-accent">again.</span>
+        </h1>
+        <p class="hero-subtitle animate-on-scroll">
+          See what your friends are ordering. Join in. Share the moment. FOODX is food delivery built for how Gen Z actually eats — together.
+        </p>
+        <div class="hero-ctas animate-on-scroll">
+          <div class="hero-cta-group">
+            <a href="#waitlist" class="btn btn-primary btn-lg hero-cta-primary" id="heroCtaPrimary">
+              <span>Get Early Access</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="hero-urgency">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              First 200 users get free delivery forever
+            </p>
+            <div class="avatar-stack">
+              <div class="avatar-circle" style="background: linear-gradient(135deg, #1A7A3C, #22A050); z-index: 5;">TK</div>
+              <div class="avatar-circle" style="background: linear-gradient(135deg, #FF6B1A, #FF8C42); z-index: 4;">AD</div>
+              <div class="avatar-circle" style="background: linear-gradient(135deg, #4D9FFF, #7BB8FF); z-index: 3;">BM</div>
+              <div class="avatar-circle" style="background: linear-gradient(135deg, #E44D6E, #FF6B8A); z-index: 2;">CH</div>
+              <div class="avatar-circle" style="background: linear-gradient(135deg, #9B59B6, #C39BD3); z-index: 1;">OL</div>
+              <span class="avatar-stack-text">247 people already waiting</span>
+            </div>
+          </div>
+          <a href="#features" class="btn btn-secondary btn-lg" id="heroCtaSecondary">See How It Works</a>
+        </div>
+        <div class="hero-stats animate-on-scroll">
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-count="200">0</span>
+            <span class="hero-stat-label">Founding Spots</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">Free</span>
+            <span class="hero-stat-label">Delivery Month 1</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">5+</span>
+            <span class="hero-stat-label" style="font-size: 11px;">Top spots in Bodija, Ring Road & UI gate</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual animate-on-scroll">
+        <div class="phone-mockup">
+          <img src="hero-mockup.png" alt="FOODX App Preview" class="phone-img" loading="eager">
+          <div class="phone-glow"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section id="features" class="features">
+    <div class="section-container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Why FOODX?</span>
+        <h2 class="section-title">Not just delivery.<br><span class="text-accent">A whole experience.</span></h2>
+        <p class="section-subtitle">Every feature was built because it makes food ordering more social, or more reliable. Nothing less.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 — Delivery -->
+        <div class="feature-card fade-left" id="featureDelivery">
+          <div class="feature-icon">
+            <div class="feature-icon-bg"></div>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="feature-title">Your order. Live. No guessing.</h3>
+          <p class="feature-desc">See exactly where your food is, down to the street. No more ‘it’s on the way’ with no proof.</p>
+          <div class="feature-visual">
+            <div class="tracking-demo">
+              <div class="tracking-line">
+                <div class="tracking-dot tracking-dot--active"></div>
+                <div class="tracking-progress"></div>
+                <div class="tracking-dot"></div>
+              </div>
+              <div class="tracking-labels">
+                <span>Restaurant</span>
+                <span>Your Door</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2 — Social -->
+        <div class="feature-card feature-card--large fade-right" id="featureSocial">
+          <div class="feature-icon">
+            <div class="feature-icon-bg"></div>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="feature-title">Your friends are eating. Get in on it.</h3>
+          <p class="feature-desc">See what they ordered, where they ordered from, and join the vibe before the food lands.</p>
+          <div class="feature-visual">
+            <div class="live-feed" id="liveFeed">
+              <div class="live-badge">
+                <span class="live-dot"></span>
+                Live activity
+              </div>
+              <div class="notif-card notif-animate" style="animation-delay: 0.2s;">
+                <div class="notif-avatar" style="background: linear-gradient(135deg, #1A7A3C, #22A050);">TO</div>
+                <div class="notif-content">
+                  <p class="notif-text">Tolu just ordered <strong>Shawarma</strong> from Chicken Republic</p>
+                  <span class="notif-time">2 min ago</span>
+                </div>
+              </div>
+              <div class="notif-card notif-animate" style="animation-delay: 0.5s;">
+                <div class="notif-avatar" style="background: linear-gradient(135deg, #FF6B1A, #FF8C42);">AD</div>
+                <div class="notif-content">
+                  <p class="notif-text">Ada invited you to <strong>join her order</strong></p>
+                  <div class="notif-row">
+                    <span class="notif-time">5 min ago</span>
+                    <button class="notif-action">Join →</button>
+                  </div>
+                </div>
+              </div>
+              <div class="notif-card notif-animate" style="animation-delay: 0.8s;">
+                <div class="notif-avatar" style="background: linear-gradient(135deg, #4D9FFF, #7BB8FF);">KE</div>
+                <div class="notif-content">
+                  <p class="notif-text">Kemi is eating <strong>Jollof Rice</strong> — she says it’s
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF8C42" stroke-width="2" style="vertical-align: middle;"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+                  </p>
+                  <span class="notif-time">12 min ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3 — Gifting -->
+        <div class="feature-card fade-left" id="featureGifting">
+          <div class="feature-icon">
+            <div class="feature-icon-bg"></div>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          </div>
+          <h3 class="feature-title">Send food. No explanation needed.</h3>
+          <p class="feature-desc">Gift a meal, split an order, or just show up for someone. FOODX makes food a love language.</p>
+          <div class="feature-visual">
+            <div class="gift-demo">
+              <div class="gift-box">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green-primary)" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+              </div>
+              <div class="gift-arrow">→</div>
+              <div class="gift-recipient">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4 — Streaks -->
+        <div class="feature-card fade-right" id="featureStreaks">
+          <div class="feature-icon">
+            <div class="feature-icon-bg"></div>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 4-4 6-4 10a4 4 0 0 0 8 0c0-4-4-6-4-10z"/><path d="M12 22v-2"/></svg>
+          </div>
+          <h3 class="feature-title">Hold the streak. Own the group chat.</h3>
+          <p class="feature-desc">Order every day. Build your streak. Let your crew know you’re serious about the food life. 🔥</p>
+          <div class="feature-visual">
+            <div class="streak-demo">
+              <div class="streak-flame">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF8C42" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+              </div>
+              <div class="streak-count">14</div>
+              <div class="streak-label">Day Streak</div>
+              <div class="streak-days">
+                <span class="day day--active"></span>
+                <span class="day day--active"></span>
+                <span class="day day--active"></span>
+                <span class="day day--active"></span>
+                <span class="day day--active"></span>
+                <span class="day day--active"></span>
+                <span class="day day--active"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="section-container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Simple as</span>
+        <h2 class="section-title">Three taps to <span class="text-accent">full belly.</span></h2>
+      </div>
+
+      <div class="steps">
+        <div class="step fade-up" style="transition-delay: 0ms;">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3 class="step-title">Pick your food</h3>
+            <p class="step-desc">Browse spots near you, see what your friends are ordering, tap what looks good.</p>
+          </div>
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step fade-up" style="transition-delay: 150ms;">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3 class="step-title">Pay with Paystack</h3>
+            <p class="step-desc">Pay with Paystack — card, bank transfer, or USSD. The payment system you already trust.</p>
+          </div>
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step fade-up" style="transition-delay: 300ms;">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3 class="step-title">Track & share</h3>
+            <p class="step-desc">Watch your rider move in real time. When it lands, post it. Let the gang know.</p>
+          </div>
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMMUNITY ========== -->
+  <section id="community" class="community">
+    <div class="section-container">
+      <div class="community-grid">
+        <div class="community-content fade-left">
+          <span class="section-tag">Built for us</span>
+          <h2 class="section-title">Built in Ibadan. <span class="text-accent">For how we actually eat.</span></h2>
+          <p class="community-text">
+            No copy-paste startup from Lagos. No foreign app trying to figure us out. FOODX started right here — because we knew no one else would build it for us.
+          </p>
+          <p class="community-text">
+            From the suya spot on Ring Road to the jollof joints near UI gate, <strong>we know the streets. We know the food. We know you.</strong>
+          </p>
+          <div class="community-highlights">
+            <div class="highlight">
+              <span class="highlight-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </span>
+              <span>Bodija. Ring Road. UI gate. We know the spots.</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </span>
+              <span>Paystack secured. No wahala, no stress.</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              </span>
+              <span>Built for the culture — not adapted for it.</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </span>
+              <span>Naira pricing. No conversion math.</span>
+            </div>
+          </div>
+        </div>
+        <div class="community-visual fade-right">
+          <div class="community-cards">
+            <div class="comm-card comm-card--1">
+              <div class="comm-card-avatar" style="background: linear-gradient(135deg, #1A7A3C, #22A050);">T</div>
+              <div>
+                <div class="comm-card-name">Tolu</div>
+                <div class="comm-card-text">"bro where you dey chop?"</div>
+              </div>
+            </div>
+            <div class="comm-card comm-card--2">
+              <div class="comm-card-avatar" style="background: linear-gradient(135deg, #FF6B1A, #FF8C42);">Y</div>
+              <div>
+                <div class="comm-card-name">Yemi</div>
+                <div class="comm-card-text">"Chicken Republic near Bodija 🍗 order join me na"</div>
+              </div>
+            </div>
+            <div class="comm-card comm-card--3">
+              <div class="comm-card-avatar" style="background: linear-gradient(135deg, #1A7A3C, #22A050);">T</div>
+              <div>
+                <div class="comm-card-name">Tolu</div>
+                <div class="comm-card-text">"on my way 😭 add extra chips abeg"</div>
+              </div>
+            </div>
+            <div class="comm-card comm-card--4">
+              <div class="comm-card-avatar" style="background: linear-gradient(135deg, #FF6B1A, #FF8C42);">Y</div>
+              <div>
+                <div class="comm-card-name">Yemi</div>
+                <div class="comm-card-text">"done ✅ FOODX don handle am"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align: center; font-size: 13px; color: rgba(255,255,255,0.4); font-style: italic; margin-top: 32px;">This one is ours. 🇳🇬</p>
+    </div>
+  </section>
+
+  <!-- ========== SOCIAL PROOF / STATS ========== -->
+  <section class="social-proof">
+    <div class="section-container">
+      <div class="proof-banner fade-up">
+        <p class="proof-text">Launching in Ibadan first. <span class="text-accent">You should be there from day one.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials-section">
+    <div class="section-container">
+      <div class="section-header fade-up">
+        <span class="section-tag">What people are saying</span>
+        <h2 class="section-title">Real people. Real hunger. <span class="text-accent">Real talk.</span></h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-up" style="transition-delay: 0ms;">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Finally an app that gets how we eat in Ibadan. My whole hostel is already on the waitlist."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #16a34a, #22c55e);">AO</div>
+            <div>
+              <strong>Ayomide O.</strong>
+              <span>200L student, UI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-up" style="transition-delay: 150ms;">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The social angle is everything. I hate ordering alone — this fixes that completely."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">TK</div>
+            <div>
+              <strong>Tolu K.</strong>
+              <span>Young professional, Bodija</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-up" style="transition-delay: 300ms;">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Paystack integration + local restaurants? This is the app we've been waiting for. No cap."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">BM</div>
+            <div>
+              <strong>Busayo M.</strong>
+              <span>Food blogger, Ring Road</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partners-strip">
+        <p class="partners-label">Coming soon to your favourite spots</p>
+        <div class="partners-row">
+          <div class="partner-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+            Chicken Republic
+          </div>
+          <div class="partner-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+            Mama's Kitchen
+          </div>
+          <div class="partner-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+            Shawarma Republic
+          </div>
+          <div class="partner-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+            Jollof House
+          </div>
+          <div class="partner-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+            Suya Spot
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="faq-section">
+    <div class="section-container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Got questions?</span>
+        <h2 class="section-title">We've got <span class="text-accent">answers.</span></h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            When does FOODX launch?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We're launching in Ibadan very soon — the countdown is live. Join the waitlist now and you'll be the first to know the exact date. First 200 signups get free delivery forever.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            Which areas in Ibadan will you cover first?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We're starting with the highest-demand zones — UI gate, Bodija, Ring Road, and Agodi. More areas roll out weekly after launch. If your area isn't listed, join the waitlist and we'll prioritize based on demand.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            Is FOODX free to use?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Completely free to sign up and order. Early waitlist members (first 200) get free delivery on every order — forever. After that, delivery fees apply per order. No hidden charges, no subscription.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            How does the social/friends feature work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Connect with friends on FOODX and see their orders in real time. You can join a friend's order, send them food, or just vibe on what everyone's eating. It's like a group chat — but for food.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            How do I pay? Is it safe?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>All payments go through Paystack — Nigeria's most trusted payment infrastructure. Card, bank transfer, or USSD. Your money is always safe. No wahala.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-question">
+            Which restaurants are on FOODX?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We're onboarding the spots you actually eat at — Chicken Republic, local shawarma joints, jollof spots near campus, suya stands, and more. More restaurants go live every week. Suggest your favourite spot on the waitlist form.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WAITLIST CTA ========== -->
+  <section id="waitlist" class="waitlist">
+    <div class="section-container">
+      <div class="waitlist-card fade-up">
+        <div class="waitlist-glow"></div>
+        <span class="section-tag section-tag--light">Early access</span>
+        <h2 class="waitlist-title">Ready to eat?</h2>
+        <p class="waitlist-subtitle">Join the first 200 users and get free delivery. FOODX is coming to Ibadan.</p>
+
+        <!-- Live Waitlist Counter -->
+        <div class="waitlist-counter">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+          <span id="waitlistCount">247</span> people already on the waitlist
+        </div>
+
+        <!-- Spots Remaining -->
+        <div class="spots-bar-wrap">
+          <div class="spots-bar-fill"></div>
+        </div>
+        <p class="spots-label">Only <strong>53 spots</strong> remaining in the first batch</p>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-wrap">
+          <div class="countdown-block"><span id="cdDays">00</span><label>Days</label></div>
+          <div class="countdown-block"><span id="cdHours">00</span><label>Hours</label></div>
+          <div class="countdown-block"><span id="cdMins">00</span><label>Mins</label></div>
+          <div class="countdown-block"><span id="cdSecs">00</span><label>Secs</label></div>
+        </div>
+
+        <form class="waitlist-form" id="waitlistForm">
+          <div class="form-row">
+            <div class="input-wrapper">
+              <span class="input-prefix">🇳🇬 +234</span>
+              <input
+                type="tel"
+                id="phoneInput"
+                class="form-input"
+                placeholder="803 123 4567"
+                maxlength="11"
+                required
+                aria-label="Phone number"
+              >
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" id="waitlistSubmit">
+              <span>Join the Waitlist</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+          <p class="form-note">No spam. Just a ping when we launch. Promise.
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 2px; vertical-align: middle;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </p>
+        </form>
+
+        <!-- Success State -->
+        <div class="waitlist-success" id="waitlistSuccess">
+          <div class="success-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3 class="success-title">You're in. Welcome to FOODX.</h3>
+          <p class="success-text">We'll hit you up the moment we go live in Ibadan.<br>Tell a friend — the more the merrier.</p>
+          <a href="#" class="btn-share" onclick="if(navigator.share){navigator.share({title:'FOODX',text:'Join me on FOODX — food delivery built for how we eat together',url:window.location.href})}">
+            Share with your crew →
+          </a>
+        </div>
+        <div class="waitlist-social">
+          <p class="social-label">Follow the journey</p>
+          <div class="social-links">
+            <a href="https://instagram.com/foodx.ng" target="_blank" rel="noopener" class="social-link" id="socialInstagram" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://twitter.com/foodxng" target="_blank" rel="noopener" class="social-link" id="socialTwitter" aria-label="Twitter/X">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://tiktok.com/@foodxng" target="_blank" rel="noopener" class="social-link" id="socialTiktok" aria-label="TikTok">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.72a8.2 8.2 0 0 0 4.76 1.5V6.77a4.83 4.83 0 0 1-1-.08z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo footer-logo">
+            <div class="custom-logo">
+              <span class="logo-letter text-white">FO</span>
+              <span class="logo-pill"></span>
+              <span class="logo-letter text-white">D</span>
+              <span class="logo-letter text-green">X</span>
+            </div>
+          </a>
+          <p class="footer-tagline">Made for the culture.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4 class="footer-col-title">Product</h4>
+            <a href="#features" class="footer-link">Features</a>
+            <a href="#how-it-works" class="footer-link">How it Works</a>
+            <a href="#waitlist" class="footer-link">Join Waitlist</a>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Company</h4>
+            <a href="#" class="footer-link">About</a>
+            <a href="#" class="footer-link">Restaurant Partners</a>
+            <a href="#" class="footer-link">Ride with Us</a>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Legal</h4>
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 FOODX. Ibadan, Nigeria.</p>
+        <p class="footer-quote">Order together. Eat together.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
