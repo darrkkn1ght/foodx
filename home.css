@@ -456,6 +456,20 @@ body {
   color: #fff;
 }
 
+/* SVG icons inside chips & ratings */
+.chip-icon {
+  flex-shrink: 0;
+  vertical-align: -2px;
+}
+.cat-chip .chip-icon { stroke: var(--text-secondary); transition: stroke 0.2s; }
+.cat-chip:hover .chip-icon { stroke: var(--text-primary); }
+.cat-chip.active .chip-icon { stroke: #fff; }
+
+.star-icon { vertical-align: -1px; }
+
+.promo-tag svg { vertical-align: -1px; margin-right: 2px; }
+.rest-badge svg { vertical-align: -1px; margin-right: 1px; }
+
 /* ── Restaurant Grid ── */
 .restaurants-section { padding-top: 20px; }
 .restaurant-grid {

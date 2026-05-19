@@ -7,10 +7,10 @@
   const h = new Date().getHours();
   const name = 'Tolu'; // would come from user session
   let greeting;
-  if (h >= 5 && h < 12) greeting = `Good morning, ${name} 👋`;
-  else if (h >= 12 && h < 17) greeting = `Good afternoon, ${name} 👋`;
-  else if (h >= 17 && h < 21) greeting = `Good evening, ${name} 👋`;
-  else greeting = `Night mode activated, ${name} 🌙`;
+  if (h >= 5 && h < 12) greeting = `Good morning, ${name}`;
+  else if (h >= 12 && h < 17) greeting = `Good afternoon, ${name}`;
+  else if (h >= 17 && h < 21) greeting = `Good evening, ${name}`;
+  else greeting = `Night mode activated, ${name}`;
   el.textContent = greeting;
 })();
 
