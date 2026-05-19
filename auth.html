@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Log In | FOODX</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Inline specific auth styles before they are moved to style.css or if they are just for this page */
+    .auth-body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .auth-container {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background-color: var(--bg-base);
+      overflow: hidden;
+    }
+    
+    @media (min-width: 481px) {
+      .auth-container {
+        min-height: 800px;
+        height: 90vh;
+        border-radius: var(--radius-xl);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        border: 1px solid var(--border-strong);
+      }
+    }
+
+    .auth-step {
+      display: none;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      padding: var(--space-6) var(--space-4);
+      animation: slideInRight 0.3s ease-out forwards;
+    }
+    
+    .auth-step.active {
+      display: flex;
+    }
+
+    .auth-step.slide-out-left {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: slideOutLeft 0.3s ease-in forwards;
+    }
+
+    .auth-step.slide-in-left {
+      animation: slideInLeft 0.3s ease-out forwards;
+    }
+
+    .auth-step.slide-out-right {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: slideOutRight 0.3s ease-in forwards;
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOutLeft {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(-100%); opacity: 0; }
+    }
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOutRight {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(100%); opacity: 0; }
+    }
+
+    /* Common Auth Elements */
+    .auth-header {
+      display: flex;
+      justify-content: center;
+      padding: var(--space-4) 0;
+      position: relative;
+    }
+    
+    .auth-back-btn {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: var(--radius-full);
+    }
+    
+    .auth-back-btn:hover {
+      background: var(--bg-overlay);
+    }
+
+    .auth-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .auth-illustration {
+      width: 100%;
+      height: 240px;
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-strong);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Placeholders for illustrations */
+    .illus-welcome { background: linear-gradient(135deg, #1A7A3C 0%, #0a2e16 100%); }
+    .illus-social { background: linear-gradient(135deg, #FF6B1A 0%, #8a3608 100%); }
+    .illus-gifting { background: linear-gradient(135deg, #4D9FFF 0%, #17365c 100%); }
+
+    .auth-illustration svg {
+      width: 80px;
+      height: 80px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .auth-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: var(--space-3);
+      text-align: center;
+    }
+
+    .auth-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: var(--space-8);
+      line-height: 1.6;
+    }
+    
+    .auth-title-left { text-align: left; font-size: 24px; margin-bottom: var(--space-2); }
+    .auth-subtitle-left { text-align: left; margin-bottom: var(--space-6); font-size: 14px; }
+
+    .auth-footer {
+      margin-top: auto;
+      padding-top: var(--space-6);
+    }
+
+    .auth-btn {
+      width: 100%;
+      margin-bottom: var(--space-4);
+    }
+
+    .auth-link {
+      display: block;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 14px;
+      text-decoration: none;
+      padding: var(--space-2);
+      font-family: 'DM Sans', sans-serif;
+    }
+    
+    .auth-link:hover {
+      color: var(--text-primary);
+    }
+
+    .auth-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: var(--space-4);
+    }
+
+    .auth-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
+
+    .auth-dot.active {
+      background: var(--text-primary);
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    /* Input specific styles */
+    .phone-input-group {
+      display: flex;
+      gap: 12px;
+      margin-bottom: var(--space-2);
+    }
+    
+    .country-code {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 16px;
+      background: var(--bg-overlay);
+      border: 1.5px solid var(--border-default);
+      border-radius: var(--radius-md);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      color: var(--text-primary);
+      height: 52px;
+      white-space: nowrap;
+    }
+    
+    .phone-input {
+      flex: 1;
+      height: 52px;
+      background: var(--bg-overlay);
+      border: 1.5px solid var(--border-default);
+      border-radius: var(--radius-md);
+      padding: 0 16px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      color: var(--text-primary);
+      letter-spacing: 1px;
+    }
+    
+    .phone-input:focus {
+      outline: none;
+      border-color: var(--green-primary);
+      box-shadow: 0 0 0 3px rgba(26,122,60,0.2);
+    }
+    
+    .auth-disclaimer {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: var(--space-8);
+    }
+
+    .otp-group {
+      display: flex;
+      gap: 8px;
+      justify-content: space-between;
+      margin-bottom: var(--space-6);
+    }
+
+    .otp-input {
+      width: 48px;
+      height: 56px;
+      background: var(--bg-elevated);
+      border: 2px solid var(--border-default);
+      border-radius: var(--radius-md);
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+    }
+    
+    .otp-input:focus {
+      outline: none;
+      border-color: var(--green-primary);
+      box-shadow: 0 0 0 3px rgba(26,122,60,0.2);
+    }
+
+    .otp-input.filled {
+      border-color: var(--green-primary);
+    }
+
+    .otp-input.error {
+      border-color: var(--error-text);
+      animation: shake 0.4s;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      50% { transform: translateX(4px); }
+      75% { transform: translateX(-4px); }
+    }
+    
+    .resend-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: var(--space-4);
+    }
+    
+    .resend-text span {
+      color: var(--text-primary);
+      font-variant-numeric: tabular-nums;
+    }
+    
+    .auth-terms {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: var(--space-4);
+      line-height: 1.5;
+    }
+    
+    .auth-terms a {
+      color: var(--text-secondary);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="auth-body">
+
+  <div class="auth-container">
+    
+    <!-- ================= STEP 1: WELCOME ================= -->
+    <div id="step-welcome" class="auth-step active">
+      <div class="auth-header">
+        <div class="custom-logo">
+          <span class="logo-letter text-white">FO</span>
+          <span class="logo-pill"></span>
+          <span class="logo-letter text-white">D</span>
+          <span class="logo-letter text-green">X</span>
+        </div>
+      </div>
+      
+      <div class="auth-content">
+        <div class="auth-illustration illus-welcome">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <h1 class="auth-title">Food is better<br>when it's shared.</h1>
+        <p class="auth-subtitle">Order food, share the moment,<br>connect with your people.</p>
+      </div>
+
+      <div class="auth-footer">
+        <button class="btn btn-primary auth-btn" onclick="goToStep('step-social')">Get Started</button>
+        <a href="#" class="auth-link" onclick="goToStep('step-phone')">Already have an account? Log in</a>
+        <div class="auth-dots">
+          <span class="auth-dot active"></span>
+          <span class="auth-dot"></span>
+          <span class="auth-dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STEP 2: SOCIAL ================= -->
+    <div id="step-social" class="auth-step">
+      <div class="auth-header">
+        <div class="custom-logo">
+          <span class="logo-letter text-white">FO</span>
+          <span class="logo-pill"></span>
+          <span class="logo-letter text-white">D</span>
+          <span class="logo-letter text-green">X</span>
+        </div>
+      </div>
+      
+      <div class="auth-content">
+        <div class="auth-illustration illus-social">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        </div>
+        <h1 class="auth-title">See what your crew<br>is eating.</h1>
+        <p class="auth-subtitle">Get notified when friends order.<br>React. Respond. Send them food.</p>
+      </div>
+
+      <div class="auth-footer">
+        <button class="btn btn-primary auth-btn" onclick="goToStep('step-gifting')">Next</button>
+        <a href="#" class="auth-link" style="text-align: right;" onclick="goToStep('step-phone')">Skip</a>
+        <div class="auth-dots">
+          <span class="auth-dot"></span>
+          <span class="auth-dot active"></span>
+          <span class="auth-dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STEP 3: GIFTING ================= -->
+    <div id="step-gifting" class="auth-step">
+      <div class="auth-header">
+        <div class="custom-logo">
+          <span class="logo-letter text-white">FO</span>
+          <span class="logo-pill"></span>
+          <span class="logo-letter text-white">D</span>
+          <span class="logo-letter text-green">X</span>
+        </div>
+      </div>
+      
+      <div class="auth-content">
+        <div class="auth-illustration illus-gifting">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+        </div>
+        <h1 class="auth-title">Buy food for your<br>people. Or ask nicely.</h1>
+        <p class="auth-subtitle">Send a full meal to a friend.<br>Or request one. Food is love.</p>
+      </div>
+
+      <div class="auth-footer">
+        <button class="btn btn-primary auth-btn" onclick="goToStep('step-phone')">Let's Go</button>
+        <div class="auth-link" style="visibility: hidden;">Spacer</div>
+        <div class="auth-dots">
+          <span class="auth-dot"></span>
+          <span class="auth-dot"></span>
+          <span class="auth-dot active"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STEP 4: PHONE ENTRY ================= -->
+    <div id="step-phone" class="auth-step">
+      <div class="auth-header">
+        <button class="auth-back-btn" aria-label="Go back" onclick="goBack()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+      </div>
+      
+      <div class="auth-content" style="justify-content: flex-start; padding-top: var(--space-4);">
+        <h1 class="auth-title auth-title-left">What's your number?</h1>
+        <p class="auth-subtitle auth-subtitle-left">We'll send you a one-time code. No passwords needed.</p>
+
+        <div class="phone-input-group">
+          <div class="country-code">
+            <span>🇳🇬</span>
+            <span>+234</span>
+          </div>
+          <input type="tel" class="phone-input" id="phoneInputAuth" placeholder="803 123 4567" maxlength="13">
+        </div>
+        
+        <div class="auth-disclaimer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          Standard messaging rates may apply
+        </div>
+      </div>
+
+      <div class="auth-footer">
+        <button class="btn btn-primary auth-btn" id="btnSendCode" disabled onclick="submitPhone()">Continue</button>
+        <p class="auth-terms">By continuing, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+
+    <!-- ================= STEP 5: OTP VERIFICATION ================= -->
+    <div id="step-otp" class="auth-step">
+      <div class="auth-header">
+        <button class="auth-back-btn" aria-label="Go back" onclick="goToStep('step-phone', true)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+      </div>
+      
+      <div class="auth-content" style="justify-content: flex-start; padding-top: var(--space-4);">
+        <h1 class="auth-title auth-title-left">Enter the code</h1>
+        <p class="auth-subtitle auth-subtitle-left">Sent to <span id="displayPhone">+234 803 123 4567</span></p>
+
+        <div class="otp-group" id="otpInputs">
+          <input type="tel" class="otp-input" maxlength="1" data-index="0" autofocus>
+          <input type="tel" class="otp-input" maxlength="1" data-index="1">
+          <input type="tel" class="otp-input" maxlength="1" data-index="2">
+          <input type="tel" class="otp-input" maxlength="1" data-index="3">
+          <input type="tel" class="otp-input" maxlength="1" data-index="4">
+          <input type="tel" class="otp-input" maxlength="1" data-index="5">
+        </div>
+        
+        <p class="resend-text">Didn't get it? Resend in <span id="resendTimer">0:45</span></p>
+        <a href="#" class="auth-link" style="text-align: left; padding-left: 0; padding-top: 0;" onclick="goToStep('step-phone', true)">Wrong number? Change it</a>
+      </div>
+
+      <div class="auth-footer">
+        <button class="btn btn-primary auth-btn" id="btnVerify" disabled onclick="verifyOTP()">Verify</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>
