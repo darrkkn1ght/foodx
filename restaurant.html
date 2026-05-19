@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Chicken Republic | FOODX</title>
+  <meta name="theme-color" content="#0F0F0F">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="restaurant.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ====== HERO ====== -->
+    <div class="rest-hero" id="restHero">
+      <img src="img/food-chicken.png" alt="Chicken Republic" class="rest-hero-img">
+      <div class="rest-hero-overlay"></div>
+
+      <div class="rest-hero-top">
+        <button class="rh-btn" id="backBtn" aria-label="Go back" onclick="history.back()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        </button>
+        <div class="rh-actions">
+          <button class="rh-btn" id="saveBtn" aria-label="Save restaurant">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <button class="rh-btn" id="shareBtn" aria-label="Share restaurant">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== RESTAURANT INFO ====== -->
+    <div class="rest-info">
+      <div class="ri-header">
+        <h1 class="ri-name">Chicken Republic</h1>
+        <span class="ri-status ri-status--open">
+          <span class="ri-status-dot"></span>
+          Open now
+        </span>
+      </div>
+
+      <div class="ri-meta-row">
+        <span class="ri-rating">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#FFB84D" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          4.7
+          <span class="ri-rating-count">(312)</span>
+        </span>
+        <span class="ri-divider"></span>
+        <span class="ri-delivery-time">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          20–30 min
+        </span>
+        <span class="ri-divider"></span>
+        <span class="ri-fee">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          ₦300
+        </span>
+      </div>
+
+      <p class="ri-min-order">Minimum order ₦1,500</p>
+    </div>
+
+    <!-- ====== CATEGORY TABS ====== -->
+    <div class="menu-tabs" id="menuTabs">
+      <button class="mtab active" data-section="burgers">Burgers</button>
+      <button class="mtab" data-section="chicken">Chicken</button>
+      <button class="mtab" data-section="sides">Sides</button>
+      <button class="mtab" data-section="drinks">Drinks</button>
+    </div>
+
+    <!-- ====== MENU ====== -->
+    <main class="menu-scroll" id="menuScroll">
+
+      <!-- Burgers Section -->
+      <section class="menu-section" data-section="burgers">
+        <h2 class="ms-title">Burgers</h2>
+
+        <button class="menu-item" data-name="Zinger Burger" data-price="2800">
+          <img src="img/food-burger.png" alt="Zinger Burger" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">Zinger Burger</h3>
+            <p class="mi-desc">Crispy chicken fillet with lettuce, mayo and cheese on a toasted bun</p>
+            <span class="mi-price">₦2,800</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+
+        <button class="menu-item" data-name="Classic Burger" data-price="2200">
+          <img src="img/food-burger.png" alt="Classic Burger" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">Classic Burger</h3>
+            <p class="mi-desc">Seasoned beef patty with fresh vegetables and special sauce</p>
+            <span class="mi-price">₦2,200</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+
+        <button class="menu-item" data-name="Double Crunch Burger" data-price="3600">
+          <img src="img/food-burger.png" alt="Double Crunch Burger" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">Double Crunch Burger</h3>
+            <p class="mi-desc">Two crispy fillets stacked with coleslaw and signature pepper sauce</p>
+            <span class="mi-price">₦3,600</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+      </section>
+
+      <!-- Chicken Section -->
+      <section class="menu-section" data-section="chicken">
+        <h2 class="ms-title">Chicken</h2>
+
+        <button class="menu-item" data-name="2pc Chicken & Chips" data-price="3200">
+          <img src="img/food-chicken.png" alt="2pc Chicken & Chips" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">2pc Chicken &amp; Chips</h3>
+            <p class="mi-desc">Two pieces of seasoned fried chicken with crispy chips and coleslaw</p>
+            <span class="mi-price">₦3,200</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+
+        <button class="menu-item" data-name="4pc Chicken Bucket" data-price="5800">
+          <img src="img/food-chicken.png" alt="4pc Chicken Bucket" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">4pc Chicken Bucket</h3>
+            <p class="mi-desc">Four pieces of golden fried chicken, perfect for sharing</p>
+            <span class="mi-price">₦5,800</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+
+        <button class="menu-item" data-name="Chicken Wrap" data-price="2500">
+          <img src="img/food-shawarma.png" alt="Chicken Wrap" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">Chicken Wrap</h3>
+            <p class="mi-desc">Grilled chicken strips wrapped with fresh salad and garlic mayo</p>
+            <span class="mi-price">₦2,500</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+      </section>
+
+      <!-- Sides Section -->
+      <section class="menu-section" data-section="sides">
+        <h2 class="ms-title">Sides</h2>
+
+        <button class="menu-item" data-name="Regular Fries" data-price="800">
+          <img src="img/food-fries.png" alt="Regular Fries" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">Regular Fries</h3>
+            <p class="mi-desc">Golden crispy fries, lightly salted</p>
+            <span class="mi-price">₦800</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+
+        <button class="menu-item" data-name="Coleslaw" data-price="500">
+          <img src="img/food-coleslaw.png" alt="Coleslaw" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">Coleslaw</h3>
+            <p class="mi-desc">Creamy fresh cabbage and carrot slaw</p>
+            <span class="mi-price">₦500</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+
+        <button class="menu-item" data-name="Jollof Rice" data-price="1200">
+          <img src="img/food-jollof.png" alt="Jollof Rice" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">Jollof Rice</h3>
+            <p class="mi-desc">Smoky party-style jollof rice with peppered sauce</p>
+            <span class="mi-price">₦1,200</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+      </section>
+
+      <!-- Drinks Section -->
+      <section class="menu-section" data-section="drinks">
+        <h2 class="ms-title">Drinks</h2>
+
+        <button class="menu-item" data-name="Coca-Cola" data-price="500">
+          <img src="img/food-drink.png" alt="Coca-Cola" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">Coca-Cola</h3>
+            <p class="mi-desc">Ice cold 50cl bottle</p>
+            <span class="mi-price">₦500</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+
+        <button class="menu-item" data-name="Chapman" data-price="1500">
+          <img src="img/food-drink.png" alt="Chapman" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">Chapman</h3>
+            <p class="mi-desc">Classic Nigerian cocktail with grenadine, Fanta and cucumber slices</p>
+            <span class="mi-price">₦1,500</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+
+        <button class="menu-item" data-name="Water" data-price="200">
+          <img src="img/food-drink.png" alt="Water" class="mi-img" loading="lazy">
+          <div class="mi-info">
+            <h3 class="mi-name">Water</h3>
+            <p class="mi-desc">75cl bottled water</p>
+            <span class="mi-price">₦200</span>
+          </div>
+          <div class="mi-add" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+        </button>
+      </section>
+
+      <div style="height:120px"></div>
+    </main>
+
+    <!-- ====== CART BAR ====== -->
+    <div class="cart-bar" id="cartBar" style="display:none">
+      <div class="cb-info">
+        <span class="cb-count" id="cbCount">0 items</span>
+        <span class="cb-total" id="cbTotal">₦0</span>
+      </div>
+      <button class="cb-btn" id="cbBtn">
+        View Cart
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+  </div>
+
+  <script src="restaurant.js"></script>
+</body>
+</html>
