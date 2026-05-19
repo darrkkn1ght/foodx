@@ -157,7 +157,7 @@ function verifyOTP() {
       
       // Mocking next step (in a real app, goes to home)
       setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'home.html';
       }, 1000);
     } else {
       // Mock error

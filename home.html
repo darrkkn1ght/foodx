@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>FOODX — Home</title>
+  <meta name="theme-color" content="#0F0F0F">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ====== TOP BAR ====== -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="topbar-logo">
+          <span class="tl-f">FO</span><span class="tl-pill"></span><span class="tl-d">D</span><span class="tl-x">X</span>
+        </div>
+      </div>
+      <button class="topbar-location" id="locationBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Bodija, Ibadan</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="topbar-right">
+        <button class="topbar-icon-btn" id="notifBtn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="notif-badge">3</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ====== SCROLLABLE CONTENT ====== -->
+    <main class="feed" id="feedScroll">
+
+      <!-- Greeting -->
+      <section class="greeting">
+        <h1 class="greeting-text" id="greetingText">Good evening, Tolu 👋</h1>
+        <p class="greeting-sub">Your friends are already ordering 👀</p>
+      </section>
+
+      <!-- Active Order Banner -->
+      <section class="active-order" id="activeOrder">
+        <div class="ao-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="ao-info">
+          <p class="ao-title">Your order is on the way!</p>
+          <p class="ao-meta">Chicken Republic · ~8 mins</p>
+        </div>
+        <button class="ao-track">Track</button>
+      </section>
+
+      <!-- Friends Eating -->
+      <section class="section-block">
+        <div class="section-label">
+          <span class="sl-dot"></span>
+          Friends eating now
+        </div>
+        <div class="friends-strip" id="friendsStrip">
+          <div class="friend-chip">
+            <div class="fc-avatar" style="background:linear-gradient(135deg,#1A7A3C,#22A050)">AD</div>
+            <div class="fc-info">
+              <span class="fc-name">Ade</span>
+              <span class="fc-food">Suya · 3m ago</span>
+            </div>
+          </div>
+          <div class="friend-chip">
+            <div class="fc-avatar" style="background:linear-gradient(135deg,#E44D6E,#FF6B8A)">BI</div>
+            <div class="fc-info">
+              <span class="fc-name">Bimpe</span>
+              <span class="fc-food">Jollof Rice · 12m</span>
+            </div>
+          </div>
+          <div class="friend-chip">
+            <div class="fc-avatar" style="background:linear-gradient(135deg,#4D9FFF,#7BB8FF)">KE</div>
+            <div class="fc-info">
+              <span class="fc-name">Kemi</span>
+              <span class="fc-food">Shawarma · 18m</span>
+            </div>
+          </div>
+          <div class="friend-chip">
+            <div class="fc-avatar" style="background:linear-gradient(135deg,#9B59B6,#C39BD3)">TO</div>
+            <div class="fc-info">
+              <span class="fc-name">Tunde</span>
+              <span class="fc-food">Amala · 25m</span>
+            </div>
+          </div>
+          <div class="friend-chip friend-chip--add">
+            <div class="fc-avatar fc-avatar--add">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="fc-info">
+              <span class="fc-name">Invite</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Promo Banner -->
+      <section class="promo-card">
+        <div class="promo-content">
+          <span class="promo-tag">🎉 Early bird</span>
+          <p class="promo-headline">Free delivery on your first 3 orders</p>
+          <p class="promo-sub">You're one of our first 200. We got you.</p>
+        </div>
+        <div class="promo-visual">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+      </section>
+
+      <!-- Order Again -->
+      <section class="section-block">
+        <div class="section-label-row">
+          <h2 class="section-heading">Pick up where you left off</h2>
+        </div>
+        <div class="reorder-strip">
+          <button class="reorder-card">
+            <img src="img/food-chicken.png" alt="Chicken Republic" class="rc-img" loading="lazy">
+            <div class="rc-info">
+              <span class="rc-name">Chicken Republic</span>
+              <span class="rc-items">Zinger Burger · ₦2,800</span>
+            </div>
+            <span class="rc-reorder">Reorder</span>
+          </button>
+          <button class="reorder-card">
+            <img src="img/food-jollof.png" alt="Mama's Kitchen" class="rc-img" loading="lazy">
+            <div class="rc-info">
+              <span class="rc-name">Mama's Kitchen</span>
+              <span class="rc-items">Jollof + Chicken · ₦3,500</span>
+            </div>
+            <span class="rc-reorder">Reorder</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Category Chips -->
+      <section class="section-block">
+        <div class="section-label-row">
+          <h2 class="section-heading">What are you feeling?</h2>
+        </div>
+        <div class="category-strip" id="categoryStrip">
+          <button class="cat-chip active" data-cat="all">All</button>
+          <button class="cat-chip" data-cat="rice">🍚 Rice</button>
+          <button class="cat-chip" data-cat="chicken">🍗 Chicken</button>
+          <button class="cat-chip" data-cat="shawarma">🌯 Shawarma</button>
+          <button class="cat-chip" data-cat="local">🍲 Local</button>
+          <button class="cat-chip" data-cat="snacks">🍟 Snacks</button>
+          <button class="cat-chip" data-cat="drinks">🥤 Drinks</button>
+        </div>
+      </section>
+
+      <!-- Restaurants -->
+      <section class="section-block restaurants-section">
+        <div class="section-label-row">
+          <h2 class="section-heading">Order from these 🔥</h2>
+          <button class="see-all">See all</button>
+        </div>
+
+        <div class="restaurant-grid" id="restaurantGrid">
+
+          <a href="#" class="rest-card" data-cat="chicken">
+            <div class="rest-card-img-wrap">
+              <img src="img/food-chicken.png" alt="Chicken Republic" class="rest-card-img" loading="lazy">
+              <span class="rest-badge rest-badge--open">Open</span>
+              <button class="rest-fav" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            </div>
+            <div class="rest-card-body">
+              <h3 class="rest-name">Chicken Republic</h3>
+              <div class="rest-meta">
+                <span class="rest-cuisine">Nigerian</span>
+                <span class="rest-dot">·</span>
+                <span class="rest-rating">⭐ 4.7</span>
+                <span class="rest-dot">·</span>
+                <span class="rest-time">20–30 min</span>
+              </div>
+              <div class="rest-delivery">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                ₦300 delivery
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="rest-card" data-cat="local">
+            <div class="rest-card-img-wrap">
+              <img src="img/food-amala.png" alt="Mama's Kitchen" class="rest-card-img" loading="lazy">
+              <span class="rest-badge rest-badge--popular">🔥 Popular</span>
+              <button class="rest-fav" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            </div>
+            <div class="rest-card-body">
+              <h3 class="rest-name">Mama's Kitchen</h3>
+              <div class="rest-meta">
+                <span class="rest-cuisine">Local</span>
+                <span class="rest-dot">·</span>
+                <span class="rest-rating">⭐ 4.9</span>
+                <span class="rest-dot">·</span>
+                <span class="rest-time">15–25 min</span>
+              </div>
+              <div class="rest-delivery">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                ₦200 delivery
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="rest-card" data-cat="shawarma">
+            <div class="rest-card-img-wrap">
+              <img src="img/food-shawarma.png" alt="Shawarma Republic" class="rest-card-img" loading="lazy">
+              <span class="rest-badge rest-badge--open">Open</span>
+              <button class="rest-fav" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            </div>
+            <div class="rest-card-body">
+              <h3 class="rest-name">Shawarma Republic</h3>
+              <div class="rest-meta">
+                <span class="rest-cuisine">Fast Food</span>
+                <span class="rest-dot">·</span>
+                <span class="rest-rating">⭐ 4.5</span>
+                <span class="rest-dot">·</span>
+                <span class="rest-time">10–20 min</span>
+              </div>
+              <div class="rest-delivery">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                ₦250 delivery
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="rest-card" data-cat="rice">
+            <div class="rest-card-img-wrap">
+              <img src="img/food-jollof.png" alt="Jollof House" class="rest-card-img" loading="lazy">
+              <span class="rest-badge rest-badge--open">Open</span>
+              <button class="rest-fav" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            </div>
+            <div class="rest-card-body">
+              <h3 class="rest-name">Jollof House</h3>
+              <div class="rest-meta">
+                <span class="rest-cuisine">Nigerian</span>
+                <span class="rest-dot">·</span>
+                <span class="rest-rating">⭐ 4.8</span>
+                <span class="rest-dot">·</span>
+                <span class="rest-time">25–35 min</span>
+              </div>
+              <div class="rest-delivery">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                Free delivery
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="rest-card" data-cat="local">
+            <div class="rest-card-img-wrap">
+              <img src="img/food-suya.png" alt="Suya Spot" class="rest-card-img" loading="lazy">
+              <span class="rest-badge rest-badge--open">Open</span>
+              <button class="rest-fav" aria-label="Save"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+            </div>
+            <div class="rest-card-body">
+              <h3 class="rest-name">Suya Spot</h3>
+              <div class="rest-meta">
+                <span class="rest-cuisine">Street Food</span>
+                <span class="rest-dot">·</span>
+                <span class="rest-rating">⭐ 4.6</span>
+                <span class="rest-dot">·</span>
+                <span class="rest-time">10–15 min</span>
+              </div>
+              <div class="rest-delivery rest-delivery--free">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                ₦150 delivery
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- spacer for bottom nav -->
+      <div style="height:100px"></div>
+    </main>
+
+    <!-- ====== FLOATING CART ====== -->
+    <button class="floating-cart" id="floatingCart">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span class="fc-count">2 items</span>
+      <span class="fc-divider"></span>
+      <span class="fc-total">₦4,800</span>
+    </button>
+
+    <!-- ====== BOTTOM NAV ====== -->
+    <nav class="bottom-nav" id="bottomNav">
+      <button class="bnav-tab active" data-tab="home">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span>Home</span>
+      </button>
+      <button class="bnav-tab" data-tab="explore">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span>Explore</span>
+      </button>
+      <button class="bnav-tab" data-tab="social">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Social</span>
+      </button>
+      <button class="bnav-tab" data-tab="profile">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Profile</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <script src="home.js"></script>
+</body>
+</html>
